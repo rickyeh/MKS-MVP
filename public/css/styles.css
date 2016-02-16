@@ -32,17 +32,23 @@ h1, h2, h3, h4 {
   padding: 0;
 }
 
-p, ul {
+p{
   margin: 15px 0;
 }
 
 ul {
-  padding-left: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+ul.trendingList li {
+    display: inline;
+    padding: 0px 10px;
+    color: #0084B4;
 }
 
 form {
-  height: 2em;
-
+  height: 100px;
 }
 
 input {
@@ -59,6 +65,12 @@ input {
   width: 150px;
   margin: 10px;
   float: left;
+  border-radius: 3px;
+}
+
+.thumbnail:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px #DAA520;
 }
 
 .center {
@@ -68,16 +80,14 @@ input {
 }
 
 .googleButton {
-  margin-top: 20px;
   height: 30px;
   width: 120px;
-  background-color: #eee;
-  color: '#333';
+  font-color: '#333333';
   font-weight: bold;
+  margin-top: 10px;
 }
 
 #centerContainer {
-  /*background-color: steelblue;*/
   margin-top: 10%;
   height: 225px; 
   width: 450px;
@@ -89,4 +99,8 @@ input {
   font-family: 'Kalam';
   font-size: 1.5em;
   color: #eee;
+}
+
+.trendingLink:hover {
+  color: #22A6D6;
 }

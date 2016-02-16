@@ -28,15 +28,13 @@ app.use(function(req, res, next) {
 });
 
 app.post('/', function(req, res) {
-  console.log('Received POST from client');
   var searchString = Object.keys(req.body)[0];
-  console.log('Request Body : ', searchString);
+  console.log('Received POST w/ Request Body : ', searchString);
 
   var searchResults = [];
 
   // Make a flickr api call 
   Flickr.tokenOnly(flickrOptions, function(error, flickr) {
-    console.log('Inside tokenOnly');
     flickr.photos.search({
       text: searchString,
       page: 1,
@@ -50,18 +48,17 @@ app.post('/', function(req, res) {
         var currentPhoto = result.photos.photo[i];
 
         var farmId = currentPhoto.farm;
-        var serverId = currentPhoto.server
+        var serverId = currentPhoto.server;
         var id = currentPhoto.id;
         var secret = currentPhoto.secret;
 
-        var url = 'https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '_' + PHOTO_SIZE + '.jpg'
+        var url = 'https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret;
 
         searchResults.push(url);
       }
       res.end(JSON.stringify(searchResults), 201);
     });
   });
-  // res.end(JSON.stringify(searchResults), 201);
 });
 
 app.listen(app.get('port'), function() {
