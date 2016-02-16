@@ -11,6 +11,9 @@ var Flickr = require("flickrapi"),
       secret: keys.secret_api
     };
 
+var RESULTS_TO_DISPLAY = 32;
+var PHOTO_SIZE = 'q'; // h is large. q is small square.  See flickr API for more info.
+
 
 app.set('port', (process.env.PORT || 3000));
 
@@ -34,19 +37,31 @@ app.post('/', function(req, res) {
   // Make a flickr api call 
   Flickr.tokenOnly(flickrOptions, function(error, flickr) {
     console.log('Inside tokenOnly');
-    flickr.photos.search({ text: searchString }, function(err, result) {
+    flickr.photos.search({
+      text: searchString,
+      page: 1,
+      per_page: RESULTS_TO_DISPLAY
+    }, function(err, result) {
       if (err) {
         throw new Error(err);
       }
 
-      console.log(result.photos.photo[0]);
-    });
-  // we can now use "flickr" as our API object,
-  // but we can only call public methods and access public data
-});
+      for (var i = 0; i < RESULTS_TO_DISPLAY; i++) {
+        var currentPhoto = result.photos.photo[i];
 
-  
-  res.end(JSON.stringify({'Post':'Received'}), 201);
+        var farmId = currentPhoto.farm;
+        var serverId = currentPhoto.server
+        var id = currentPhoto.id;
+        var secret = currentPhoto.secret;
+
+        var url = 'https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '_' + PHOTO_SIZE + '.jpg'
+
+        searchResults.push(url);
+      }
+      res.end(JSON.stringify(searchResults), 201);
+    });
+  });
+  // res.end(JSON.stringify(searchResults), 201);
 });
 
 app.listen(app.get('port'), function() {

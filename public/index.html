@@ -5,25 +5,36 @@
     <title>InstaPaper</title>
     <!-- Not present in the tutorial. Just for basic styling. -->
     <link rel="stylesheet" href="css/base.css" />
+    <link href='https://fonts.googleapis.com/css?family=Kalam:400,700' rel='stylesheet' type='text/css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
-    <!-- // <script src="./node_modules/flickrapi/browser/flickrapi.js"></script> -->
   </head>
   <body>
+    <!-- Center div with input form and buttons  -->
+    <div class="center" id="centerContainer">
+      <div class="center" id="title">
+        <h1 class="center">Instapaper</h1>
+      </div>
+      <form class="input" id="submitForm">
+        <input type="text" name="name" placeholder="Search" id="searchContent">
+        <!-- <button type="button" name="button" id="submitButton">Get Pictures!</button> -->
+      </form>
+      <div class="center googleButton" id="buttonContainer">
+        <button class="googleButton">Instapaper Search</button>
+      </div>
+    </div>
+    <!-- Search results -->
+    <div id="searchResults">
+
+    </div>
+    
+
     <div id="content"></div>
     <!-- // <script type="text/babel" src="scripts/example.js"></script> -->
-    <!-- <form class="input" method="post" id="submitForm"> -->
-    <form class="input" id="submitForm">
-      <input type="text" name="name" id="searchContent">
-      <button type="button" name="button" id="submitButton">Get Pictures!</button>
-    </form>
-
-    <div id="searchResults"></div>
-
-    <script type="text/babel" src="scripts/app.js">
+    <script type="text/javascript" src="scripts/app.js">
 
     </script>
   </body>
