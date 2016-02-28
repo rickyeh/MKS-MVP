@@ -5,12 +5,18 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "browserify-middleware": "^7.0.0",
     "express": "^4.13.4",
-    "flickrapi": "^0.3.36"
+    "flickrapi": "^0.3.36",
+    "reactify": "^1.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-loader": "^6.2.2",
+    "webpack": "^1.12.13"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",

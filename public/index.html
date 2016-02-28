@@ -2,56 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>InstaPaper</title>
+    <title>PhotoReactor</title>
     <!-- Not present in the tutorial. Just for basic styling. -->
     <link rel="stylesheet" href="css/styles.css" />
     <link href='https://fonts.googleapis.com/css?family=Kalam:400,700' rel='stylesheet' type='text/css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.min.js"></script>
+<!--     // <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    // <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    <script type="text/javascript" src="scripts/instaPaperApp.js"></script>
   </head>
   <body>
-    <!-- Center div with input form and buttons  -->
-    <div class="center" id="centerContainer">
-      <div class="center" id="title">
-        <h1 class="center">Instapaper</h1>
-      </div>
-      <form class="input" id="submitForm">
-        <input type="text" name="name" placeholder="Search" id="searchContent">
-        <!-- <button type="button" name="button" id="submitButton">Get Pictures!</button> -->
-        <div class="center googleButton" id="buttonContainer">
-          <button class="googleButton">Instapaper Search</button>
-        </div>
-      </form>
-      <div class="center" id="trendingWrapper">
-        <ul class="trendingList">
-          <li class="trendingLink">#mountain</li>
-          <li class="trendingLink">#islands</li>
-          <li class="trendingLink">#forest</li>
-          <li class="trendingLink">#flowers</li>
-          <li class="trendingLink">#kittens</li>
-        </ul> 
-
-<!-- 
-        <div class="trendingLink">#mountain</div>
-        <div class="trendingLink">#islands</div>
-        <div class="trendingLink">#forest</div>
-        <div class="trendingLink">#flowers</div>
-        <div class="trendingLink">#kittens</div> -->
-      </div>
-    </div>
-    <!-- Search results -->
-    <div id="searchResults">
-
-    </div>
-    
-
     <div id="content"></div>
-    <!-- // <script type="text/babel" src="scripts/example.js"></script> -->
-    <script type="text/javascript" src="scripts/app.js">
-
-    </script>
+    <script src="/app-bundle.js"></script>
   </body>
 </html>

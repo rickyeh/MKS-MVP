@@ -1,19 +1,13 @@
+/** @jsx React.DOM */
 
-// var Test = React.createClass({
+var React = require('react');
+var ReactDOM = require('react-dom');
+var InstaPaperApp = require('./instaPaperApp.js');
 
-//   render: function() {
-//     return (
-//       <div className="comment">
-//         How are you doing?
-//       </div>
-//     );
-//   }
-// });
-
-// ReactDOM.render(
-//   <Test/>,
-//   document.getElementById('content')
-// );
+ReactDOM.render(
+  <InstaPaperApp />,
+  document.getElementById('content')
+);  
 
 function postServer(searchString) {
   $.ajax({

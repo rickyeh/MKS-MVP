@@ -5,6 +5,17 @@ var bodyParser = require('body-parser');
 var keys = require('./keys.js')
 var app = express();
 
+// React
+var browserify = require('browserify-middleware');
+var reactify   = require('reactify'); 
+
+app.get('/app-bundle.js',
+  browserify('./public/scripts/app.js', {
+    transform: [reactify]
+  }));
+
+// Flickr API
+
 var Flickr = require("flickrapi"),
     flickrOptions = {
       api_key: keys.flickr_api,

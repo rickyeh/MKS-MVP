@@ -1,11 +1,18 @@
 Node server
 
 Have an html page that can send post requests from input box
-
 Server takes that post information and queries flickr API for JSON
-
 Server uses returned json object to build an array of URLS which are links to images
-
 Server sends back the links for the index.html to render via React
 
+React View Hierarchy
 
+app.js
+
+instaPaperApp
+  centerContainer
+    submitForm
+    trendingLinks
+      trendingLink
+  searchResults
+    thumbnail
